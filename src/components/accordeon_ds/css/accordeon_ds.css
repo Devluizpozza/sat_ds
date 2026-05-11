@@ -1,0 +1,104 @@
+/* -------------------------------------------------------
+   Accordeon — expanders customizados (aba Análise)
+   ------------------------------------------------------- */
+
+[class*="st-key-ranking_content_panel"] [data-testid="stExpander"] details {
+   display: flex !important;
+   flex-direction: column !important;
+   align-items: stretch !important;
+   align-self: stretch !important;
+   border-radius: 8px !important;
+   border-top: 3px solid var(--color-border) !important;
+   border-right: 1px solid var(--color-border) !important;
+   border-bottom: 1px solid var(--color-border) !important;
+   border-left: 1px solid var(--color-border) !important;
+   background: var(--color-bg-white) !important;
+   box-shadow: 0 1px 1px 0 var(--color-shadow) !important;
+}
+
+/* Seta no canto direito — o conteúdo real fica em summary > span (wrapper interno do Streamlit)
+   DOM order: [icon_span, text_div] → row-reverse + space-between = texto à esquerda, seta à direita */
+[class*="st-key-ranking_content_panel"] [data-testid="stExpander"] details summary > span {
+   display: flex !important;
+   flex-direction: row-reverse !important;
+   justify-content: space-between !important;
+   align-items: center !important;
+   width: 100% !important;
+}
+
+/* Título do accordeon — texto dentro do summary */
+[class*="st-key-ranking_content_panel"] [data-testid="stExpander"] details summary p {
+   color: var(--color-text-secondary) !important;
+   font-family: Roboto, sans-serif !important;
+   font-size: 18px !important;
+   font-style: normal !important;
+   font-weight: 500 !important;
+   line-height: 22px !important;
+   letter-spacing: -0.18px !important;
+}
+
+/* Ícones Material nos títulos dos expanders — (:material/icon:) renderiza como span[role="img"] */
+[class*="st-key-ranking_content_panel"] [data-testid="stExpander"] details summary span[role="img"] {
+   color: var(--color-high) !important;
+   font-size: 18px !important;
+}
+
+/* -------------------------------------------------------
+   Conteúdo interno do accordeon
+   ------------------------------------------------------- */
+
+/* Texto descritivo — parágrafos e itens de lista */
+[class*="st-key-ranking_content_panel"] [data-testid="stExpanderDetails"] [data-testid="stMarkdownContainer"] p,
+[class*="st-key-ranking_content_panel"] [data-testid="stExpanderDetails"] [data-testid="stMarkdownContainer"] li {
+   color: var(--color-text-body) !important;
+   font-family: Roboto, sans-serif !important;
+   font-size: 14px !important;
+   font-style: normal !important;
+   font-weight: 400 !important;
+   line-height: normal !important;
+   letter-spacing: 0.14px !important;
+}
+
+/* Termos em destaque — bold inline dentro de parágrafos e listas */
+[class*="st-key-ranking_content_panel"] [data-testid="stExpanderDetails"] [data-testid="stMarkdownContainer"] strong {
+   color: var(--color-text-body) !important;
+   font-family: Roboto, sans-serif !important;
+   font-size: 14px !important;
+   font-style: normal !important;
+   font-weight: 700 !important;
+   line-height: normal !important;
+   letter-spacing: 0.14px !important;
+}
+
+/* Título dentro do accordeon — sempre o primeiro parágrafo do conteúdo */
+[class*="st-key-ranking_content_panel"] [data-testid="stExpanderDetails"] [data-testid="stMarkdownContainer"] p:first-child,
+[class*="st-key-ranking_content_panel"] [data-testid="stExpanderDetails"] [data-testid="stMarkdownContainer"] p:first-child strong {
+   color: var(--color-text-muted) !important;
+   font-family: Roboto, sans-serif !important;
+   font-size: 18px !important;
+   font-style: normal !important;
+   font-weight: 500 !important;
+   line-height: 18px !important;
+   letter-spacing: 0.18px !important;
+}
+
+/* Remove a linha separadora entre header e conteúdo quando o accordeon está aberto */
+[class*="st-key-ranking_content_panel"] [data-testid="stExpander"] details[open] summary {
+   border-bottom: none !important;
+}
+
+[class*="st-key-ranking_content_panel"] [data-testid="stExpander"] details[open] [data-testid="stExpanderDetails"] {
+   border-top: none !important;
+}
+
+/* Círculo ao redor da seta — rotação nativa do Streamlit (> → v) é preservada */
+[class*="st-key-ranking_content_panel"] [data-testid="stExpander"] details summary span:has(> [data-testid="stIconMaterial"]) {
+   display: flex !important;
+   padding: 3px 3px 2px 3px !important;
+   justify-content: center !important;
+   align-items: center !important;
+   gap: 4px !important;
+   border-radius: 18px !important;
+   border: 1px solid var(--color-text-subtle) !important;
+   background: var(--color-bg-light) !important;
+}

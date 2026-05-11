@@ -1,0 +1,70 @@
+/* -------------------------------------------------------
+   Card Dist DS — card de distribuição por ano
+   ------------------------------------------------------- */
+
+/* Espaço abaixo dos cards — empurra o fundo do expander para longe do border-bottom */
+[data-testid="stMarkdownContainer"]:has(.card-dist-ds) {
+   margin-bottom: 1rem !important;
+}
+
+.card-dist-ds {
+   display: flex;
+   width: 215px;
+   padding: 16px 12px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+   gap: 16px;
+   border-radius: 8px;
+   border-bottom-width: 3px;
+   border-bottom-style: solid;
+   border-bottom-color: var(--color-medium);
+   box-sizing: border-box;
+}
+
+.card-dist-ds__title {
+   color: var(--color-text-secondary);
+   font-family: sans-serif;
+   font-size: 13px;
+   font-weight: 500;
+   line-height: normal;
+   letter-spacing: 0.26px;
+   text-transform: uppercase;
+   margin: 0;
+}
+
+.card-dist-ds__value {
+   color: var(--color-text-primary);
+   font-family: sans-serif;
+   font-size: 18px;
+   font-weight: 700;
+   line-height: normal;
+   margin: 0;
+}
+
+.card-dist-ds__percent {
+   color: var(--color-medium); /* default; sobrescrito por percent_color via inline style */
+   font-family: Roboto, sans-serif;
+   font-size: 12px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: normal;
+   letter-spacing: 0.851px;
+   text-transform: uppercase;
+   margin: 0;
+}
+
+.card-dist-ds__stats {
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+}
+
+.card-dist-ds__meta {
+   color: var(--color-text-muted);
+   font-family: sans-serif;
+   font-size: 12px;
+   font-weight: 400;
+   line-height: normal;
+   margin: 0;
+}

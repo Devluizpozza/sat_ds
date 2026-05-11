@@ -1,0 +1,27 @@
+/* -------------------------------------------------------
+   Card Metric ST — customização de st.metric
+   Estilos base; overrides de action_color e icon são
+   injetados por instância via <style> escopado.
+   ------------------------------------------------------- */
+
+/* Remove a seta SVG (▲▼) do delta em todos os card_metric_st */
+[class*="st-key-card_metric_"] [data-testid="stMetricDelta"] svg {
+   display: none !important;
+}
+
+/* Label (título) e valor do metric card — especificidade (0,5,0) para vencer a regra
+   do accordeon_sat.css que chega a (0,4,1) dentro de stExpanderDetails */
+[class*="st-key-card_metric_"][class*="st-key-card_metric_"][class*="st-key-card_metric_"][class*="st-key-card_metric_"] [data-testid="stMetricLabel"],
+[class*="st-key-card_metric_"][class*="st-key-card_metric_"][class*="st-key-card_metric_"][class*="st-key-card_metric_"] [data-testid="stMetricLabel"] * {
+   font-size: 12px !important;
+}
+
+[class*="st-key-card_metric_"][class*="st-key-card_metric_"][class*="st-key-card_metric_"][class*="st-key-card_metric_"] [data-testid="stMetricValue"],
+[class*="st-key-card_metric_"][class*="st-key-card_metric_"][class*="st-key-card_metric_"][class*="st-key-card_metric_"] [data-testid="stMetricValue"] * {
+   color: var(--color-text-primary) !important;
+   font-family: Roboto, sans-serif !important;
+   font-size: 21px !important;
+   font-style: normal !important;
+   font-weight: 700 !important;
+   line-height: 20px !important;
+}

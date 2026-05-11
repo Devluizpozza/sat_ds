@@ -1,0 +1,52 @@
+/* -------------------------------------------------------
+   Button DS — botão pill estilizado com ícone SVG opcional
+   Escopo: [class*="st-key-button_ds_"]
+   bg_color e ícone são controlados por instância via Python.
+   ------------------------------------------------------- */
+
+[class*="st-key-button_ds_"] button {
+   display: inline-flex !important;
+   width: fit-content !important;
+   height: 28px !important;
+   min-height: 28px !important;
+   max-height: 28px !important;
+   padding: 0px 12px !important;
+   justify-content: center !important;
+   align-items: center !important;
+   gap: 4px !important;
+   border-radius: 999px !important;
+   border: 1px solid var(--color-high-emphasis) !important;
+   background: var(--color-high-emphasis) !important;
+   box-sizing: border-box !important;
+   margin-bottom: 4px;
+}
+
+[class*="st-key-button_ds_"] button p,
+[class*="st-key-button_ds_"] button * {
+   color: var(--color-bg-white) !important;
+   font-family: sans-serif !important;
+   font-size: 14px !important;
+   font-style: normal !important;
+   font-weight: 400 !important;
+   line-height: normal !important;
+   letter-spacing: -0.14px !important;
+   margin: 0 !important;
+   padding: 0 !important;
+}
+
+[class*="st-key-button_ds_"] button:hover {
+   background: var(--color-high-hover) !important;
+   border-color: var(--color-high-hover) !important;
+}
+
+[class*="st-key-button_ds_"] button > div {
+   display: flex !important;
+   flex-direction: row !important;
+   align-items: center !important;
+   justify-content: center !important;
+   gap: 4px !important;
+   width: 100% !important;
+   margin: 0 !important;
+   padding: 0 !important;
+   line-height: 1 !important;
+}

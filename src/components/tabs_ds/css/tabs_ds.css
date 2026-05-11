@@ -1,0 +1,64 @@
+/* -------------------------------------------------------
+   Tabs — abas principais de navegação
+   role="tab", role="tablist" e aria-selected são padrão W3C/WAI-ARIA
+   ------------------------------------------------------- */
+
+.stTabs [role="tablist"] {
+   gap: 4px;
+}
+
+.stTabs [role="tab"] {
+   display: flex;
+   height: 42px;
+   padding: 10px 15px;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   border-radius: 3px 3px 0 0;
+   border: 1px solid var(--color-border);
+   background: var(--color-bg-light);
+}
+
+/* Tab inativa — também targetamos filhos pois o Streamlit aplica cor própria nos elementos internos */
+.stTabs [role="tab"][aria-selected="false"],
+.stTabs [role="tab"][aria-selected="false"] * {
+   color: var(--color-high-emphasis);
+   font-family: sans-serif;
+   font-style: normal;
+   font-weight: 300;
+   line-height: 16px;
+   font-size: 14px;
+   letter-spacing: -0.14px;
+   border-bottom: none;
+}
+
+/* Tab ativa / selecionada */
+.stTabs [role="tab"][aria-selected="true"],
+.stTabs [role="tab"][aria-selected="true"] * {
+   color: var(--color-text-body);
+   font-family: sans-serif;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 20px;
+   font-size: 14px;
+   letter-spacing: -0.14px;
+   background: var(--color-bg-white);
+   border-bottom: none;
+}
+
+/* Tab panel - área de conteúdo da tab ativa */
+.stTabs [role="tabpanel"] {
+   border: 1px solid var(--color-border);
+   padding: 12px;
+}
+
+/* Remove hr dentro do tabpanel */
+.stTabs [role="tabpanel"] hr {
+   display: none !important;
+}
+
+/* Remove elementos decorativos internos do Streamlit/BaseWeb */
+.stTabs [data-baseweb="tab-highlight"],
+.stTabs [data-baseweb="tab-border"] {
+   display: none;
+}

@@ -1,0 +1,21 @@
+/* -------------------------------------------------------
+   Info Bar — barra informativa genérica
+   Cor, borda e texto são definidos por instância via parâmetros.
+   ------------------------------------------------------- */
+
+.info-bar-ds {
+   display: flex;
+   width: 100%;
+   padding: 15px;
+   align-items: flex-start;
+   border-radius: 4px;
+   flex: 1 0 0;
+   font-family: Roboto, sans-serif;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 20px;
+   letter-spacing: -0.14px;
+   color: var(--color-info);
+   box-sizing: border-box;
+}
