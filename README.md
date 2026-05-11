@@ -135,26 +135,10 @@ component_name/
     └── component_name.css  # estilos do componente
 ```
 
----
-
-### Dependências externas
-
-Os componentes fazem uso de constantes de cores provenientes do pacote `theme`, que deve estar disponível no ambiente de execução:
-
-```python
-from theme.colors import ACURACIA_HIGH, ACURACIA_MEDIUM, BORDER, ...
-```
-
-Certifique-se de que o pacote de tema do SAT esteja instalado junto ao `sat-ds`.
-
----
 
 ### Licença
 
 MIT © lpozza
-
----
----
 
 ## 🇺🇸 English
 
@@ -285,17 +269,6 @@ component_name/
 ├── component_name.py    # Python implementation
 └── css/
     └── component_name.css  # component styles
-```
-
----
-
-### External dependencies
-
-Components rely on color constants from the `theme` package, which must be available in the runtime environment:
-
-```python
-from theme.colors import ACURACIA_HIGH, ACURACIA_MEDIUM, BORDER, ...
-```
 
 Make sure the SAT theme package is installed alongside `sat-ds`.
 
